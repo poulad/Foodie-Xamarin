@@ -11,7 +11,7 @@ namespace Foodie
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
+			MainPage = new EditRecipePage();
 		}
 
 		protected override void OnStart ()

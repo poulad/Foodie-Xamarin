@@ -7,9 +7,9 @@ using Xamarin.Forms;
 
 namespace Foodie
 {
-	public partial class MainPage : ContentPage
+	public partial class EditRecipePage : ContentPage
 	{
-		public MainPage()
+		public EditRecipePage()
 		{
 			InitializeComponent();
 		}
