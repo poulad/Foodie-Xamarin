@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foodie.Android", "Foodie\Foodie.Android\Foodie.Android.csproj", "{DEE82BF7-E6B8-4C31-8187-CF630F668D5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foodie", "Foodie\Foodie\Foodie.csproj", "{EBA366FF-C9AC-4EFC-8117-C88E19529784}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DEE82BF7-E6B8-4C31-8187-CF630F668D5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEE82BF7-E6B8-4C31-8187-CF630F668D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEE82BF7-E6B8-4C31-8187-CF630F668D5A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DEE82BF7-E6B8-4C31-8187-CF630F668D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEE82BF7-E6B8-4C31-8187-CF630F668D5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEE82BF7-E6B8-4C31-8187-CF630F668D5A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{EBA366FF-C9AC-4EFC-8117-C88E19529784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBA366FF-C9AC-4EFC-8117-C88E19529784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBA366FF-C9AC-4EFC-8117-C88E19529784}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EBA366FF-C9AC-4EFC-8117-C88E19529784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBA366FF-C9AC-4EFC-8117-C88E19529784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBA366FF-C9AC-4EFC-8117-C88E19529784}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0574F87F-E886-4A43-93A5-ECD8DF625E32}
+	EndGlobalSection
+EndGlobal
