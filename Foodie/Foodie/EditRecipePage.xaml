@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Foodie"
+             xmlns:behaviors="clr-namespace:Foodie.Behaviors"
              x:Class="Foodie.EditRecipePage" 
              Title="Foodie" >
 
@@ -11,7 +12,16 @@
                 <EntryCell Label="Recipe Name" Text="Scrambled Eggs" HorizontalTextAlignment="End"></EntryCell>
                 <EntryCell Label="Prep Time" Text="5 mins" HorizontalTextAlignment="End"></EntryCell>
                 <EntryCell Label="Cook Time" Text="2 mins" HorizontalTextAlignment="End"></EntryCell>
-                <EntryCell Label="Number of Servings" Text="2" HorizontalTextAlignment="End"></EntryCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Margin="15, 10, 10, 10">
+                        <Label Text="Number of Servings" VerticalOptions="Center"></Label>
+                        <Entry Text="2" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand">
+                            <Entry.Behaviors>
+                                <behaviors:NumericEntryBehavior></behaviors:NumericEntryBehavior>
+                            </Entry.Behaviors>
+                        </Entry>
+                    </StackLayout>
+                </ViewCell>
                 <SwitchCell Text="Make Again?"></SwitchCell>
             </TableSection>
 
