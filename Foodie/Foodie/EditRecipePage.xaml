@@ -1,23 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Foodie"
              xmlns:behaviors="clr-namespace:Foodie.Behaviors"
+             xmlns:triggers="clr-namespace:Foodie.Triggers"
              x:Class="Foodie.EditRecipePage" 
              Title="Foodie" >
 
     <TableView Intent="Form" HasUnevenRows="True">
         <TableView.Root>
             <TableSection Title="Info">
-                <EntryCell Label="Recipe Name" Text="Scrambled Eggs" HorizontalTextAlignment="End"></EntryCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Margin="15, 10, 10, 10">
+                        <Label Text="Recipe" VerticalOptions="Center"></Label>
+                        <Entry Text="Scrambled Eggs" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand">
+                            <Entry.Triggers>
+                                <EventTrigger Event="TextChanged">
+                                    <triggers:RequiredValidationTriggerAction />
+                                </EventTrigger>
+                            </Entry.Triggers>
+                        </Entry>
+                    </StackLayout>
+                </ViewCell>
+
                 <EntryCell Label="Prep Time" Text="5 mins" HorizontalTextAlignment="End"></EntryCell>
                 <EntryCell Label="Cook Time" Text="2 mins" HorizontalTextAlignment="End"></EntryCell>
                 <ViewCell>
                     <StackLayout Orientation="Horizontal" Margin="15, 10, 10, 10">
-                        <Label Text="Number of Servings" VerticalOptions="Center"></Label>
-                        <Entry Text="2" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand">
+                        <Label Text="Number of Servings" VerticalOptions="Center">
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label"  Binding="{Binding Source={x:Reference ServingsEntry}, Path=IsFocused}" Value="True">
+                                    <Setter Property="Label.TextColor" Value="Crimson"></Setter>
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+                        <Entry x:Name="ServingsEntry" Text="2" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand">
                             <Entry.Behaviors>
-                                <behaviors:NumericEntryBehavior></behaviors:NumericEntryBehavior>
+                                <behaviors:NumericEntryBehavior />
                             </Entry.Behaviors>
                         </Entry>
                     </StackLayout>
@@ -52,7 +70,14 @@
             <TableSection Title="Instructions">
                 <ViewCell>
                     <ContentView HeightRequest="200" Margin="15, 10,10,10">
-                        <Editor Text="Break some eggs, mix in milk, pour mixture into skillet"></Editor>
+                        <Editor Text="Break some eggs, mix in milk, pour mixture into skillet">
+                            <Editor.Triggers>
+                                <Trigger TargetType="Editor" Property="Editor.IsFocused" Value="True">
+                                    <Setter Property="BackgroundColor" Value="Beige"></Setter>
+                                    <Setter Property="FontAttributes" Value="Bold"></Setter>
+                                </Trigger>
+                            </Editor.Triggers>
+                        </Editor>
                     </ContentView>
                 </ViewCell>
             </TableSection>
