@@ -7,5 +7,7 @@
         public string MealType { get; set; }
 
         public string Difficulty { get; set; }
+
+        public string PrepTime { get; set; }
     }
 }

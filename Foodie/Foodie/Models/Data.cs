@@ -7,13 +7,13 @@ namespace Foodie.Models
     {
         public static readonly Recipe[] Recipes =
         {
-            new Recipe{ Name = "Lasagnia", MealType = "Dinner", Difficulty = "Hard"},
-            new Recipe{ Name = "Blueberry Muffins", MealType = "Breakfast", Difficulty = "Medium"},
-            new Recipe{ Name = "Burger", MealType = "Dinner", Difficulty = "Medium"},
-            new Recipe{ Name = "Qunioa Salad", MealType = "Lunch", Difficulty = "Easy"},
-            new Recipe{ Name = "Carrot Cake", MealType = "Breakfast", Difficulty = "Medium"},
-            new Recipe{ Name = "Oatmeal", MealType = "Breakfast", Difficulty = "Easy"},
-            new Recipe{ Name = "Smoothie", MealType = "Breakfast", Difficulty = "Easy"},
+            new Recipe{ Name = "Lasagnia", MealType = "Dinner", Difficulty = "Hard", PrepTime = "10 min"},
+            new Recipe{ Name = "Blueberry Muffins", MealType = "Breakfast", Difficulty = "Medium" , PrepTime = "20 min"},
+            new Recipe{ Name = "Burger", MealType = "Dinner", Difficulty = "Medium" , PrepTime = "34 min"},
+            new Recipe{ Name = "Qunioa Salad", MealType = "Lunch", Difficulty = "Easy", PrepTime = "8 min"},
+            new Recipe{ Name = "Carrot Cake", MealType = "Breakfast", Difficulty = "Medium", PrepTime = "15 min"},
+            new Recipe{ Name = "Oatmeal", MealType = "Breakfast", Difficulty = "Easy", PrepTime = "5 min"},
+            new Recipe{ Name = "Smoothie", MealType = "Breakfast", Difficulty = "Easy", PrepTime = "3 min"},
         };
 
         public static IEnumerable<ListViewGrouping<Recipe>> GroupedRecipes { get; } = new[]

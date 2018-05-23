@@ -7,10 +7,43 @@
         <ListView ItemsSource="{x:Static local:Models.Data.GroupedRecipes}"
                   GroupDisplayBinding="{Binding Title}"
                   GroupShortNameBinding="{Binding ShortName}"
+                  HasUnevenRows="True"
                   IsGroupingEnabled="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Name}" Detail="{Binding MealType}"></TextCell>
+                    <ViewCell Height="200">
+                        <ContentView Margin="10">
+                            <Grid RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30" />
+                                    <RowDefinition Height="100" />
+                                    <RowDefinition Height="5" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <BoxView Color="#3f51b5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+                                <Label Text="{Binding MealType}" TextColor="White" FontSize="Large" VerticalTextAlignment="Center"
+                                       Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+
+                                <Image BackgroundColor="Gray" Aspect="AspectFill" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+                                <BoxView Color="#757575" Opacity=".25" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+                                <Label Text="{Binding Name}" FontSize="Large" FontAttributes="Bold"
+                                       Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" />
+
+                                <BoxView Color="#16CA86" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" />
+
+                                <BoxView Color="#F6F6F6" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" />
+                                <Label Text="{Binding PrepTime, StringFormat='{0} prep'}" FontSize="Small" TextColor="#757575"
+                                       Grid.Row="3" Grid.Column="0" />
+                            </Grid>
+                        </ContentView>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
