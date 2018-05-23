@@ -9,5 +9,7 @@
         public string Difficulty { get; set; }
 
         public string PrepTime { get; set; }
+
+        public string ImageName { get; set; } = "bb-muffin.jpg";
     }
 }
